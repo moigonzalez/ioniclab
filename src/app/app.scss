@@ -14,3 +14,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.button {
+	display: inline-block;
+	text-decoration: none;
+	background-color: map-get($colors, primary);
+	color: white;
+	padding: 10px 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-radius: 4px;
+	&:hover {
+		color: white;
+		background-color: map-get($colors, secondary);
+		text-decoration: none;
+	}
+}

@@ -8,6 +8,7 @@
 
 <ion-content padding>
 		<div *ngFor="let blogPost of blogPosts">
-			{{ blogPost.title }}
+			<h2 class="a-blogpost--title" [innerHTML]="blogPost.title"></h2>
+			<div class="a-blogpost--body" [innerHTML]="blogPost.body"></div>
 		</div>
 </ion-content>
