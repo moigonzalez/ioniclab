@@ -7,5 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-	Blog :)
+		<div *ngFor="let blogPost of blogPosts">
+			{{ blogPost.title }}
+		</div>
 </ion-content>
