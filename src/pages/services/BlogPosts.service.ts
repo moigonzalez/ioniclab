@@ -18,4 +18,12 @@ export class BlogPostsService {
 							.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 		return blogPosts;
 	}
+
+	getBlogPost(nid): Observable<[String]> {
+		let blogPost = this.http
+							.get(`${AppSettings.BLOGPOST_EP}/${nid}`)
+							.map((res: Response) => res.json())
+							.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+		return blogPost;
+	}
 }

@@ -8,7 +8,9 @@
 
 <ion-content padding>
 		<div *ngFor="let blogPost of blogPosts">
-			<h2 class="a-blogpost--title" [innerHTML]="blogPost.title"></h2>
-			<div class="a-blogpost--body" [innerHTML]="blogPost.body"></div>
+			<div class="blog-post-wrapper" [attr.data-target-nid]="blogPost.nid" (click)="navDetailPage($event)">
+				<h2 class="a-blogpost--title" [innerHTML]="blogPost.title"></h2>
+				<div class="a-blogpost--body" [innerHTML]="blogPost.body"></div>
+			</div>
 		</div>
 </ion-content>

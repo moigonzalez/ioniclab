@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { BlogPostsService } from '../services/BlogPosts.service';
+import { BlogPageDetail } from '../blogDetail/blogPageDetail';
 
 @Component({
   selector: 'page-blog',
   templateUrl: 'blog.html',
-  providers: [BlogPostsService]
+  providers: [ BlogPostsService ],
+  entryComponents: [ BlogPageDetail ]
 })
 export class BlogPage implements OnInit {
 	blogPosts: String[];
@@ -20,6 +22,14 @@ export class BlogPage implements OnInit {
 														err => {
 															console.log(err);
 														});
+	}
+
+	navDetailPage(event): void {
+		event.preventDefault();
+		let nid = event.currentTarget.dataset.targetNid;
+		this.navCtrl.push(BlogPageDetail, {
+			nid: nid
+		});
 	}
 
 	ngOnInit(): void {
