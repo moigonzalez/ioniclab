@@ -79,7 +79,7 @@ export class WeatherPage implements OnInit {
 	ngOnInit(): void {
 		this.isLoadingLocation = true;
 		this.isLocationAvailable = false;
-		Geolocation.getCurrentPosition({maximumAge: 100000})
+		Geolocation.getCurrentPosition({maximumAge: 100000, timeout: 10000})
 					.then((resp) => {
 						let userLocation = { };
 						(userLocation as any).lat = resp.coords.latitude;

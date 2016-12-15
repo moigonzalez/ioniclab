@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-	<div [hidden]="isLocationAvailable">
+	<div [hidden]="isLocationAvailable || isLoadingLocation">
 		<p>Your geolocation seems unavailable, please enter the name of your city below: </p>
 		<form (ngSubmit)="getCurrentWeatherForCity(cityName)">
 			<ion-item>
