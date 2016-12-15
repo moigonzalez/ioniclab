@@ -15,6 +15,15 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+
 .button {
 	display: inline-block;
 	text-decoration: none;
@@ -56,6 +65,8 @@
 		display: block;
 		position: absolute;
 		top: 60%;
+		left: 50%;
+		@include transform(translateX(-50%));
 	}
 }
 

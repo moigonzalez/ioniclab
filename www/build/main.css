@@ -21795,6 +21795,9 @@ sub {
   display: block;
   position: absolute;
   top: 60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .text-center {
