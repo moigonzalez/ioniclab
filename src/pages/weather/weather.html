@@ -7,5 +7,18 @@
 </ion-header>
 
 <ion-content padding>
-	Weather :)
+	<header class="text-center">
+		<h1 class="currentWeather--title"> {{currentWeather?.name}} </h1>
+		<ion-icon class="currentWeather--icon" [name]="currentWeatherIcon"></ion-icon>
+		<div class="currentWeather--temp">{{ currentWeather?.main.temp }}°C</div>
+	</header>
+	<section class="currentWeather--info text-center margin-top">
+		<div>
+			<label>Minimum temperature:</label><span>{{ currentWeather?.main.temp_min }}<span>°C</span></span>
+		</div>
+		<div>
+			<label>Maximum temperature:</label><span>{{ currentWeather?.main.temp_max }}<span>°C</span></span>
+		</div>
+	</section>
 </ion-content>
+

@@ -1,3 +1,26 @@
 page-weather {
-	
+	.currentWeather {
+		
+		&--title {
+			font-size: 6rem;
+		}
+
+		&--icon {
+			font-size: 22rem;
+		}
+
+		&--temp {
+			font-size: 6rem;
+		}
+
+		&--info {
+			font-size: 2rem;
+			
+			label {
+				font-weight: bold;
+				margin-right: 5px;
+			}
+			
+		}
+	}
 }
