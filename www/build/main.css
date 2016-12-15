@@ -21766,6 +21766,35 @@ sub {
   text-decoration: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
 page-home ion-icon {
   font-size: 9.2em;
+}
+
+page-weather .currentWeather--title {
+  font-size: 6rem;
+}
+
+page-weather .currentWeather--icon {
+  font-size: 22rem;
+}
+
+page-weather .currentWeather--temp {
+  font-size: 6rem;
+}
+
+page-weather .currentWeather--info {
+  font-size: 2rem;
+}
+
+page-weather .currentWeather--info label {
+  font-weight: bold;
+  margin-right: 5px;
 }
