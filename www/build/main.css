@@ -21804,6 +21804,10 @@ sub {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .margin-top {
   margin-top: 20px;
 }

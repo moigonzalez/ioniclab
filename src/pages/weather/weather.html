@@ -7,6 +7,18 @@
 </ion-header>
 
 <ion-content padding>
+	<div [hidden]="isLocationAvailable">
+		<p>Your geolocation seems unavailable, please enter the name of your city below: </p>
+		<form (ngSubmit)="getCurrentWeatherForCity(cityName)">
+			<ion-item>
+				<ion-label floating>Name of your city</ion-label>
+				<ion-input type="text" [(ngModel)]="cityName" name="cityName"></ion-input>
+			</ion-item>
+			<div class="text-right margin-top">
+				<button ion-button type="submit">Enter</button>
+			</div>
+		</form>
+	</div>
 	<div [hidden]="!isLocationAvailable">
 		<header class="text-center">
 			<h1 class="currentWeather--title"> {{currentWeather?.name}} </h1>

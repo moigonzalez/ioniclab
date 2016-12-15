@@ -16,16 +16,20 @@ export class WeatherPage implements OnInit {
 	userLocation: {};
 	isLoadingLocation: Boolean;
 	isLocationAvailable: Boolean;
+	cityName: String;
 
 	constructor(public navCtrl: NavController, private openWeatherService: OpenWeatherService) { }
 
 	getCurrentWeatherForCity(cityName): void {
+		this.isLoadingLocation = true;
 		this.openWeatherService
 			.getCurrentWeatherForCityName(cityName)
 			.subscribe(
 			currentWeather => {
 				this.currentWeather = currentWeather;
 				this.currentWeatherIcon = this.selectIconForWeatherId((currentWeather as any).weather[0].icon);
+				this.isLoadingLocation = false;
+				this.isLocationAvailable = true;
 			}, err => {
 				console.log(err);
 			});
@@ -84,7 +88,8 @@ export class WeatherPage implements OnInit {
 						this.isLoadingLocation = false;
 						this.isLocationAvailable = true;
 					}, (err) => {
-						console.log(err);
+						this.isLoadingLocation = false;
+						this.isLocationAvailable = false;
 					});
 	}
 
