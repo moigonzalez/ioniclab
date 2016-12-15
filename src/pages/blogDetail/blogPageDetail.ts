@@ -17,7 +17,6 @@ export class BlogPageDetail implements OnInit {
 	getBlogPost(nid): void {
 		this.blogPostsService.getBlogPost(nid).subscribe(blogPost => {
 															this.blogPost = blogPost[0];
-															console.log(this.blogPost);
 														},
 														err => {
 															console.log(err);

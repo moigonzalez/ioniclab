@@ -16,12 +16,14 @@ export class BlogPage implements OnInit {
 	constructor(public navCtrl: NavController, private blogPostsService: BlogPostsService) { }
 
 	getBlogPosts(): void {
-		this.blogPostsService.getBlogPosts().subscribe(blogPosts => {
-															this.blogPosts = blogPosts;
-														},
-														err => {
-															console.log(err);
-														});
+		this.blogPostsService.getBlogPosts()
+			.subscribe(
+				blogPosts => {
+					this.blogPosts = blogPosts;
+				},
+				err => {
+					console.log(err);
+				});
 	}
 
 	navDetailPage(event): void {
