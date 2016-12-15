@@ -18,4 +18,12 @@ export class OpenWeatherService {
 							.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 		return curentWeather;
 	}
+
+	getCurrentWeatherForCoord(LatLon): Observable<[String]> {
+		let curentWeather = this.http
+							.get(`${AppSettings.CURRENT_WEATHER_BY_COORD_EP}lat=${LatLon.lat}&lon=${LatLon.lon}&units=metric&appid=${AppSettings.OpenWeatherAPIKey}`)
+							.map((res: Response) => res.json())
+							.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+		return curentWeather;
+	}
 }

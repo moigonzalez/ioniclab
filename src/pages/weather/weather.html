@@ -7,18 +7,23 @@
 </ion-header>
 
 <ion-content padding>
-	<header class="text-center">
-		<h1 class="currentWeather--title"> {{currentWeather?.name}} </h1>
-		<ion-icon class="currentWeather--icon" [name]="currentWeatherIcon"></ion-icon>
-		<div class="currentWeather--temp">{{ currentWeather?.main.temp }}°C</div>
-	</header>
-	<section class="currentWeather--info text-center margin-top">
-		<div>
-			<label>Minimum temperature:</label><span>{{ currentWeather?.main.temp_min }}<span>°C</span></span>
-		</div>
-		<div>
-			<label>Maximum temperature:</label><span>{{ currentWeather?.main.temp_max }}<span>°C</span></span>
-		</div>
-	</section>
+	<div [hidden]="!isLocationAvailable">
+		<header class="text-center">
+			<h1 class="currentWeather--title"> {{currentWeather?.name}} </h1>
+			<ion-icon class="currentWeather--icon" [name]="currentWeatherIcon"></ion-icon>
+			<div class="currentWeather--temp">{{ currentWeather?.main.temp }}°C</div>
+		</header>
+		<section class="currentWeather--info text-center margin-top">
+			<div>
+				<label>Min. temperature:</label><span>{{ currentWeather?.main.temp_min }}<span>°C</span></span>
+			</div>
+			<div>
+				<label>Max. temperature:</label><span>{{ currentWeather?.main.temp_max }}<span>°C</span></span>
+			</div>
+		</section>
+	</div>
+	<div [hidden]="!isLoadingLocation" class="spinner--loading">
+		<ion-spinner></ion-spinner>
+		<small class="spinner__info">Very busy getting your location</small>
+	</div>
 </ion-content>
-

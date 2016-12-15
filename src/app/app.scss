@@ -31,6 +31,34 @@
 	}
 }
 
+.spinner {
+
+	&--loading {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 99;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(255,255,255,0.8);
+
+		ion-spinner {
+			display: block;
+			height: 88px;
+			width: 88px;
+		}
+	}
+
+	&__info {
+		display: block;
+		position: absolute;
+		top: 60%;
+	}
+}
+
 .text-center {
 	text-align: center;
 }
