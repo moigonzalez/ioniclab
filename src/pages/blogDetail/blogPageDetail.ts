@@ -10,7 +10,7 @@ import { BlogPage } from '../blog/blog';
   providers: [BlogPostsService]
 })
 export class BlogPageDetail implements OnInit {
-	blogPost: String;
+	blogPost: any;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private blogPostsService: BlogPostsService) { }
 

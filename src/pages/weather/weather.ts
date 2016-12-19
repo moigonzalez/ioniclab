@@ -11,7 +11,7 @@ import { NavController } from 'ionic-angular';
   providers: [ OpenWeatherService ]
 })
 export class WeatherPage implements OnInit {
-	currentWeather: String[];
+	currentWeather: any;
 	currentWeatherIcon: String;
 	userLocation: {};
 	isLoadingLocation: Boolean;
