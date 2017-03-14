@@ -22,7 +22,9 @@
 	<div [hidden]="!isLocationAvailable">
 		<header class="text-center">
 			<h1 class="currentWeather--title"> {{currentWeather?.name}} </h1>
+			<h4 class="currentWeather--time">Last checked @ {{ currentWeather?.dt * 1000 | date:'hh:mma':'UTC+01:00' }}</h4>
 			<ion-icon class="currentWeather--icon" [name]="currentWeatherIcon"></ion-icon>
+			<small class="currentWeather--description">{{ currentWeather?.weather[0].description }}</small>
 			<div class="currentWeather--temp">{{ currentWeather?.main.temp }}°C</div>
 		</header>
 		<section class="currentWeather--info text-center margin-top">
@@ -31,6 +33,12 @@
 			</div>
 			<div>
 				<label>Max. temperature:</label><span>{{ currentWeather?.main.temp_max }}<span>°C</span></span>
+			</div>
+			<div>
+				<label>Sunrise:</label><span>{{ currentWeather?.sys.sunrise * 1000 | date:'hh:mma':'UTC+01:00' }}</span>
+			</div>
+			<div>
+				<label>Sunset:</label><span>{{ currentWeather?.sys.sunset * 1000 | date:'hh:mma':'UTC+01:00' }}</span>
 			</div>
 		</section>
 	</div>

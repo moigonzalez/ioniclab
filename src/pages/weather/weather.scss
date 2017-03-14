@@ -1,20 +1,33 @@
 page-weather {
 	.currentWeather {
+		&--default {
+			text-transform: uppercase;
+			text-decoration: underline;
+			font-weight: bold; 
+		}
 		
 		&--title {
 			font-size: 6rem;
 		}
 
 		&--icon {
-			font-size: 22rem;
+			font-size: 22rem; 
 		}
 
 		&--temp {
 			font-size: 6rem;
 		}
 
+		&--description {
+			display: block;
+			text-transform: uppercase;
+			text-decoration: underline; 
+		}
+
 		&--info {
 			font-size: 2rem;
+			max-width: 300px;
+			margin: 40px auto;
 			
 			label {
 				font-weight: bold;
